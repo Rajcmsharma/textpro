@@ -12,13 +12,7 @@ function App() {
    <Router>
     <Routes>
       
-      <Route path='/' element={
-      <>
-
-      
-      <Main title="TextBox"/>
-      </>
-      }></Route>
+      <Route path='/' element={<Main title="TextBox"/>}></Route>
       <Route path='/about' element={<About />}></Route>
 
     </Routes>
