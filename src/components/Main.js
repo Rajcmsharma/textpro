@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Alert from './Alert';
-
+import Nav from './Nav';
 export default function Main(props) {
   const [message,setMessage]=useState('');
   const [text, setText] = useState('');
@@ -46,7 +46,7 @@ export default function Main(props) {
 
   return (
     <>
-    
+    <Nav/>
     <Alert message={message}/>
       <form action="" className='container'>
         <h3>{props.title}</h3>
