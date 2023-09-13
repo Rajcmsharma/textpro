@@ -12,7 +12,7 @@ function App() {
    <Router basename='/textpro'>
     <Routes>
       
-      <Route exact path='/textpro' element={<Main title="TextBox"/>}></Route>
+      <Route path='/' element={<Main title="TextBox"/>}></Route>
       <Route path='/about' element={<About />}></Route>
 
     </Routes>
