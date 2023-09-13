@@ -9,10 +9,10 @@ import About from './components/About';
 
 function App() {
   return (
-   <Router>
+   <Router basename='/textpro'>
     <Routes>
       
-      <Route path='/' element={<Main title="TextBox"/>}></Route>
+      <Route exact path='/textpro' element={<Main title="TextBox"/>}></Route>
       <Route path='/about' element={<About />}></Route>
 
     </Routes>
