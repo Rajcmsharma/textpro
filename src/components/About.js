@@ -8,8 +8,8 @@ function About() {
   //  function run on submit of form 
   const sendEmail = (e) => {
     e.preventDefault();
-    
-    emailjs.sendForm('service_xcrx46l', 'template_9gidlyt', form.current, 'A0EqNo5pIzHiECBz7')
+    //visit email.js for getting all this and make register on that its free
+    emailjs.sendForm('your service id ', 'your template id', form.current, 'public url')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
