@@ -7,7 +7,6 @@ import{
 import Main from './components/Main';
 import About from './components/About';
 
-
 function App() {
   return (
    <Router basename='/textpro'>
