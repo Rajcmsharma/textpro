@@ -9,7 +9,7 @@ import About from './components/About';
 
 function App() {
   return (
-   <Router basename='/textpro'>
+   <Router>
     <Routes>
       
       <Route path='/' element={<Main title="TextBox"/>}></Route>
