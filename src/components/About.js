@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
 import Nav from './Nav';
 import emailjs from '@emailjs/browser';
-
+import {serviceid,templateid,password} from './password.js'  ;
 function About() {
 
   let form = useRef();
   //  function run on submit of form 
+  
+  
   const sendEmail = (e) => {
     e.preventDefault();
     //visit email.js for getting all this and make register on that its free
-    emailjs.sendForm('service_xcrx46l', 'template_9gidlyt', form.current, 'A0EqNo5pIzHiECBz7')
+    
+    emailjs.sendForm(serviceid, templateid, form.current,password)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -41,7 +44,7 @@ function About() {
       <p>Thank you for choosing my creations. Your support means the world to me. Together, we'll navigate the ever-changing landscape of technology, pushing boundaries and making our digital world a better place.</p>
 
       <p>If you have any questions, suggestions, or just want to chat, please don't hesitate to <button type='button' className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">
-        get in touch with me
+        Email me
       </button>. Your voice shapes the future of this app, and I'm always eager to hear from you.</p>
 
       <p>Stay curious, stay innovative, and let's continue this incredible journey together!</p>
