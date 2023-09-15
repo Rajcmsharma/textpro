@@ -9,7 +9,7 @@ function About() {
   const sendEmail = (e) => {
     e.preventDefault();
     //visit email.js for getting all this and make register on that its free
-    emailjs.sendForm('your service id ', 'your template id', form.current, 'public url')
+    emailjs.sendForm('service_xcrx46l', 'template_9gidlyt', form.current, 'A0EqNo5pIzHiECBz7')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
