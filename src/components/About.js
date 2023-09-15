@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Nav from './Nav';
+import emailjs from '@emailjs/browser';
 
 function About() {
-  return (
+
+  let form = useRef();
+  //  function run on submit of form 
+  const sendEmail = (e) => {
+    e.preventDefault();
     
+    emailjs.sendForm('service_xcrx46l', 'template_9gidlyt', form.current, 'A0EqNo5pIzHiECBz7')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
+
+  //  return data by react function component
+  return (
+
     <div className="About">
-      <Nav/>
+      <Nav />
       <h2>About Me</h2>
       <p>Welcome to my digital world!</p>
 
@@ -23,9 +40,56 @@ function About() {
 
       <p>Thank you for choosing my creations. Your support means the world to me. Together, we'll navigate the ever-changing landscape of technology, pushing boundaries and making our digital world a better place.</p>
 
-      <p>If you have any questions, suggestions, or just want to chat, please don't hesitate to <a href="/contact">get in touch with me</a>. Your voice shapes the future of this app, and I'm always eager to hear from you.</p>
+      <p>If you have any questions, suggestions, or just want to chat, please don't hesitate to <button type='button' className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">
+        get in touch with me
+      </button>. Your voice shapes the future of this app, and I'm always eager to hear from you.</p>
 
       <p>Stay curious, stay innovative, and let's continue this incredible journey together!</p>
+
+      {/* modal */}
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Feedback</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body" >
+              <form className="row g-3" ref={form}>
+              <div className="col-md-6">
+                  <label htmlFor="name" className="form-label">Name</label>
+                  <input type="text" className="form-control" id="name" name='user_name'/>
+                </div>
+                <div className="col-md-6">
+                  <label htmlFor="inputEmail4" className="form-label">Email</label>
+                  <input type="email" name='user_email' className="form-control" id="inputEmail4"/>
+                </div>
+                
+                <div className="col-12">
+                  <label htmlFor="idea" className="form-label">Feedback And Suggestion</label>
+                  <textarea rows={10} className="form-control" id="idea" placeholder="give your feedback here" name='message'/>
+                </div>
+                
+               
+               
+                
+               
+               
+              </form>
+            </div>
+            <div className="modal-footer">
+              
+              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={sendEmail}>Send Mail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* modal end */}
+
+
+
+
+
     </div>
   );
 }
