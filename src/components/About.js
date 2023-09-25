@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Nav from './Nav';
+
 import emailjs from '@emailjs/browser';
 import {serviceid,templateid,password} from './password.js'  ;
 function About() {
@@ -24,9 +24,9 @@ function About() {
   //  return data by react function component
   return (
 
-    <div className="About">
-      <Nav />
-      <h2>About Me</h2>
+    <div className="About mx-4 my-3">
+  
+      <h2 style={{textDecoration:"underline dotted"}}>About Me</h2>
       <p>Welcome to my digital world!</p>
 
       <p>I'm a passionate and dedicated individual who wears many hats: developer, designer, and dreamer. This app is the result of countless hours of hard work, fueled by my love for technology and creativity.</p>
